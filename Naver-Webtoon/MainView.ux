@@ -1,0 +1,55 @@
+<App>
+	<DockPanel ux:Name="Index" Color="#fff">
+		<Android>
+			<StatusBarBackground Dock="Top" Background="#000" />
+		</Android>
+		<iOS>
+			<StatusBarBackground Alignment="Top"/>
+		</iOS>
+ 		<Panel ux:Name="WrapperArea" Dock="Fill">
+ 			<Panel ux:Name="SortBar" Width="100%" Height="60" Color="#eee" Alignment="Top" Y="-60">
+ 				<Text Value="정렬 영역" Alignment="Center" Color="#333"/>
+ 			</Panel>
+ 			<DockPanel ux:Name="TopArea" Alignment="Top" Y="0" Color="#56C072" Height="180+height(DayBar)">
+ 				<Text Value="광고 영역" Alignment="Center" Color="#fff"/>
+				<DockPanel ux:Name="DayBar" Dock="Bottom" Height="60" Background="#eee">
+	 				<ScrollView AllowedScrollDirections="Horizontal">
+	 					<StackPanel Orientation="Horizontal" ItemSpacing="3">
+	 						<WeekDay/>
+	 						<WeekDay/>
+	 						<WeekDay/>
+	 						<WeekDay/>
+	 						<WeekDay/>
+	 						<WeekDay/>
+	 						<WeekDay/>
+	 						<WeekDay/>
+	 						<WeekDay/>
+	 					</StackPanel>
+	 				</ScrollView>
+				</DockPanel>
+			</DockPanel>
+
+			<ScrollView ux:Name="ScrollContents">
+				<Grid ColumnCount="3" CellSpacing="3" Padding="0, height(TopArea), 0, 0">
+					<Each Count="30">
+						<Rectangle Color="#bbb" BoxSizing="FillAspect" Aspect="1" />
+					</Each>
+				</Grid>
+			
+				<ScrollingAnimation From="0" To="height(TopArea)-height(DayBar)-height(SortBar)">
+					<Change TopArea.Y="0-(height(TopArea)-height(DayBar)-height(SortBar))"/>
+				</ScrollingAnimation>
+
+				<WhileScrollable ScrollDirections="Up">
+					<Change SortBar.Y="0" Duration="0.3"/>
+				</WhileScrollable>
+			</ScrollView>
+ 		</Panel>
+
+		<DockPanel ux:Name="TabArea" Dock="Bottom" Height="60" Background="#2F313E">
+			<Text Value="탭 영역" Alignment="Center" Color="#aaa" />
+		</DockPanel>
+	</DockPanel>
+</App>
+
+
