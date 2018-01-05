@@ -13,19 +13,7 @@
  			<DockPanel ux:Name="TopArea" Alignment="Top" Y="0" Color="#56C072" Height="180+height(DayBar)">
  				<Text Value="광고 영역" Alignment="Center" Color="#fff"/>
 				<DockPanel ux:Name="DayBar" Dock="Bottom" Height="60" Background="#eee">
-	 				<ScrollView AllowedScrollDirections="Horizontal">
-	 					<StackPanel Orientation="Horizontal" ItemSpacing="3">
-	 						<WeekDay/>
-	 						<WeekDay/>
-	 						<WeekDay/>
-	 						<WeekDay/>
-	 						<WeekDay/>
-	 						<WeekDay/>
-	 						<WeekDay/>
-	 						<WeekDay/>
-	 						<WeekDay/>
-	 					</StackPanel>
-	 				</ScrollView>
+	 				<Text Value="요일 영역" Alignment="Center" Color="#333"/>
 				</DockPanel>
 			</DockPanel>
 
